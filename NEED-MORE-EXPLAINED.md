@@ -1,0 +1,5 @@
+- Gossip protocol
+- Sidechain
+- Sybil attack
+- Coin age in ethereum
+- Practical byzantine fault tolerance

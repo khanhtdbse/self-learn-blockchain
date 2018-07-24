@@ -48,5 +48,52 @@ Là chương trình chạy trên nền tảng blockchain
 3. Blockchain 3.0 - Sự phát tán của blockchain 2.0 trong mọi lĩnh vưc trong xã hội: y tế, trường học,...
 4. Blockchain X - Blockchain cho tất cả moi người. Sử dụng đơn giản như google search bây giờ
 ##6. Phân loại blockchain
-##7. Điểm mạnh, điểm yếu về blockchain
-##7. Nguyên lý CAP và Blockchain
+#6.1. Public blockchain
+ - Là loại blockchain mở cho tất cả người dùng đều có thể tham gia với tư cách là một node và có quyền trong việc ra quyết định trong mạng lưới chung. Bản sao của sổ cái được lưu trữ, bảo trì tai tất cả các node
+#6.2. Private blockchain
+- Là loại blockchain chỉ cho một người hoặc nhóm người truy cập sổ cái
+#6.3. Semi-private blockchain
+- Là loại blockchain gồm 2 phần. Phần mở cho tất cả mọi người sử dụng và phần đóng chỉ cho một người hoặc một nhóm người sử dụng
+#6.4. Sidechain
+- Sidechain là một loại blockchain. Nó có thể nhận coin từ một blockchain khác (one way pegged sidechain) hoặc chuyển coin tới một blockchain khác (two ways sidechain)
+- Thường áp dụng trong việc tạo ra các AltCoin (Alternative coin)
+##7. Sự đồng thuận trong blockchain
+#7.1. Khái niệm
+- Sự động thuận là một nội dung trong hệ thống phân tán và hiện nay đã được áp dụng phổ biến trong blockchain nhằm mục đích tạo ra sự chính xác duy nhất (sing version of truth) được chấp nhận bởi tất cả các node trong network
+- Phân loại
+	+ Proof-based, leader-based: Leader node được bình chọn và đưa ra kết quả cuối cùng
+	+ Byzantine fault tolerance-based: Dựa trên số lượng votes
+#7.2. Một số thuật toán đồng thuận phổ biến
+*a. Bằng chứng công việc (proof of work)*
+- Dựa trên bằng chứng của việc sử dụng đủ nguồn tài nguyên tính toán trước khi đề xuất một giá trị nào đó để đạt được sự chấp nhật của network
+- Hiện nay đã được áp trung bitcoin và một số tiền mã hóa khác
+*b. Bằng chứng cổ phần (proof of stake)*
+- Dựa trên lượng cổ phần của node đó trong network do đó lợi nhuận thu lại từ việc tấn công hệ thống trên PoS sẽ không bằng chi phí bỏ ra để mua lượng cổ phần lớn nhất
+- Bắt đầu áp dụng từ Peercoin. Nay được áp dụng phổ biến trong Ethereum 
+*c. Bằng chứng cổ phần ủy quyền (delegated proof of stake)*
+- Các node có cổ phần trong network có quyền ủy quyền cho các nodes khác thực hiện xác nhận giao dịch bằng voting
+*d. Bằng chứng thời gian hao tổn*
+- Được giới thiệu bởi intel. Sử dụng Trusted Execution Environment (TEE) để chọn ra ngẫu nhiên an toàn một leader. Yêu cầu sử dụng Software Guard Extension
+- Được áp dụng trong dự án Intel Sawtooth Lake blockchain
+*e. Bằng chứng sự quan trọng*
+- Bằng chứng sự quan trọng không những phụ thuộc vào cổ phần PoS mà còn phụ thuộc vào việc sử dụng tokens
+- Áp dụng trong Nemcoin
+*f. Thuận toán đồng thuận liên kết*
+ - Các node trong mạng giữ một danh sách các nodes uy tín và chỉ lan truyền các transaction từ các nodes  uy tín đó
+ *g. Thuận toán đồng thuận tín nhiệm*
+ - 1 node được chọn để ra quyết định dựa trên sự tín nhiệm mà node đã tạo ra được trước đó
+##8. Nguyên lý CAP và Blockchain
+Blockchain đảm bảo được tính Availablity, Partition tolerance và Eventually Consistency
+##9. Điểm mạnh, điểm yếu về blockchain
+#9.1. ĐIểm mạnh
+- Phân tán
+- Đáng tin cậy nhờ nội dung trong suốt của các transaction
+- Rất khó thể chỉnh sửa
+- Uptime cao bởi rất nhiều nodes online
+- Bảo mật cao nhờ thuật toán mã hóa tiên tiến
+- Có ý nghĩa thống nhật cấu trúc CSDL cho các ngành khác nhau
+- Tiết kiệm chi phí do không cần bên thứ 3 xác nhận
+#9.2. Điểm yếu
+- Khả năng mở rộng với dữ liệu lớn
+- Khả năng áp dụng còn hạn chế
+- Quyền riêng tư khi cần thiết
