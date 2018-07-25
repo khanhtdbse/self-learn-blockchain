@@ -3,3 +3,13 @@
 - Sybil attack
 - Coin age in ethereum
 - Practical byzantine fault tolerance
+- Distributed hash tables (DHTs)
+- Inter planetary file system (IPFS)
+- Directed acyclic graph
+- Filecon
+- Bitswap
+- BigchainDB
+- Maidsafe
+- Lisk
+- Diffie - Hellman
+- Elliptic curve cryptography

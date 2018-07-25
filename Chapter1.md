@@ -85,7 +85,7 @@ Là chương trình chạy trên nền tảng blockchain
 ##8. Nguyên lý CAP và Blockchain
 Blockchain đảm bảo được tính Availablity, Partition tolerance và Eventually Consistency
 ##9. Điểm mạnh, điểm yếu về blockchain
-#9.1. ĐIểm mạnh
+#9.1. Điểm mạnh
 - Phân tán
 - Đáng tin cậy nhờ nội dung trong suốt của các transaction
 - Rất khó thể chỉnh sửa
