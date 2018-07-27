@@ -64,4 +64,4 @@
 	- Ví không xác định: Loại ví này sẽ sinh các private key ngẫu nhiên
 	- Vi xác định: Loại ví này sẽ sinh các private key dựa trên hàm băm giá trị seed. Seed là chuỗi các từ ngẫu nhiên từ chuẩn [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt). Ví dụ: MetaMask
 	- Ví kế thừa xác định: Loại ví này lưu trữ các keys dưới dạng cây được sinh ra bởi private key
-	- Ví con người: Loại ví này sinh private key bằng việc băm passphrase do người dùng nhập vàoL
+	- Ví con người: Loại ví này sinh private key bằng việc băm passphrase do người dùng nhập vào

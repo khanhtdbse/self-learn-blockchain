@@ -25,3 +25,7 @@ Trong mạng ngang hàng, người có chủ đích tấn công mạo nhận s�
 - Diffie - Hellman
 - Elliptic curve cryptography
 - Double spending
+- Codius.org
+- PBFT protocol
+- SIEVE algorithm
+- NOOPS
