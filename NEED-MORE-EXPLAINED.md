@@ -29,3 +29,6 @@ Trong mạng ngang hàng, người có chủ đích tấn công mạo nhận s�
 - PBFT protocol
 - SIEVE algorithm
 - NOOPS
+- Sawtooth lake intel
+- Web3.js
+- Truffle

@@ -1,14 +1,24 @@
 #IX. Hyperledger
 ##1. Giới thiệu 
 - Là một dự án phát triển bởi The Linux Foundation. Nhằm mục đích xây dựng các bộ công cụ, framework open source trên nền tảng blockchain
-- Dự án 6 dự án con
+- Gồm các dự án con
 	- Hyperledger sawtooth: tập trung vào việc tách biệt sổ cái, thuật toán đồng thuận và các transaction. Bằng cách xây dựng transaction theo chuẩn transaction families, và có thể tuỳ chọn thuật toán đồng thuận cho các transaction này
 	- Hyperledger fabric: nền tảng linh hoạt cho phép plug-and-play các thành phần của một hệ thống blockchain. Một số component: chaincode, blockchain, membership service, ..
 	- Hyperledger indy: Cung cấp giải pháp định danh trên nền tảng blockchain
 	- Hyperledger burrow: Tương tự với máy ảo của Ethereum (EVM). Tuy nhiên tích hợp thêm chức năng phân quyền
 
 ##2. Giới thiệu về hyperledger fabric
-###2.1. Membership service
+###2.1. Giới thiệu
+- Mục đích:
+	- Những người tham gia phải được định danh
+	- Phân quyền tầng network
+	- Hiệu năng, transaction/s cao
+	- Xác nhận transaction với độ trễ thấp
+	- Đảm bảo quyền riêng tư của transaction khi cần thiết
+- Fabric có smart contract được viết bằng các khác ngôn ngữ khác nhau (Java, Go, NodeJS)
+
+####2.1.1 Membership service
+
 - Chức năng:
 	- Xác thực thông tin người dùng
 	- Đăng ký người dùng
@@ -19,13 +29,13 @@
 	- Transaction certificate authority
 	- TLS certificate authority
 
-###2.2. Blockchain service
+####2.1.2. Blockchain service
 - Gồm các component con
 	- Consensus manager: Các consensus có sẵn: PBFT. SIEVE. NOOPS
 	- Distributed ledger: Sổ cái được lưu dưới dạng key-value. Sử dụng RocksDB
 	- Peer to peer protocol: Sử dụng gRPC
 
-###2.3. Chaincode service
+####.2.1.3. Chaincode service
 - Gồm các component con
 	- Secure container: Chaincode sẽ được thực thi trong container (thường sử dụng docker)
 	- Secure registry: Chứa danh sách các chaincode
@@ -34,3 +44,16 @@
 	- Invoke(func_name, func_params[]): Chạy khi call chaincode, có thể thực hiện hành động ghi dữ liệu vào sổ cái
 	- Query(): Thực hiện để lấy dữ liệu từ sổ cái
 	- Main(): Được chạy khi một peer deploy chaincode
+
+###2.2. Hello world
+- curl -­sSL https://goo.gl/byy2Qj | bash -­s 1.2
+- cd first-network && ./byfn.sh -m generate
+-  ./byfn.sh -m up
+-  cd ../fabcar && npm i && npm i grpc
+-  ./startFabric.sh
+-  node enrollAdmin.js
+-  node registerUser.js
+-  node query.js
+-  Edit call paramaters in invoke.js
+-  node invoke.js
+-  node query.js to view result
