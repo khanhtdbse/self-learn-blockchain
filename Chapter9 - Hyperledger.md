@@ -101,3 +101,31 @@
 *Order component phân bổ block B2 tới các peers thông qua channel C. Tại từng peer sẽ thực hiện xác thực từng transaction trong block thông qua việc xem xét các transaction được chấp nhận bởi các org trong chính sách tán thành (được lưu trong smartcontract). Transaction đã được xác thực sẽ được áp dụng vào sổ cái. Các peer sẽ phát ra các event tương ứng, các applications có thể subscribe các event này để xử lý*
 
 *Lưu ý: Ở phase 3 này không chạy lại smartcontract. Việc chạy smartcontract chỉ chạy ở phase 1. Việc này đảm bảo tính mở rộng sau này: kết quả vẫn được đảm bảo bởi org trong chính sách tán thành mà không cần chạy smartcontract ở tất cả các peer*
+
+##2.5. Sổ cái ledger
+![](https://hyperledger-fabric.readthedocs.io/en/release-1.2/_images/ledger.diagram.1.png)
+
+Sổ cái ledger gồm 2 thành phần chính:
+
+- World state: là cơ sở dữ liệu chứa state hiện tại của sổ cái. Nhằm thuận tiện cho việc lấy dữ liệu thay vì phải lấy state thông qua các tất cả transactions
+- Blockchain: là chuỗi các block. Trong mỗi block chứa các transaction. Transaction ghi lại sự thay đổi đối với world state
+
+###2.5.1. World state
+![](https://hyperledger-fabric.readthedocs.io/en/release-1.2/_images/ledger.diagram.3.png)
+*Giá trị version thể hiện số lần update giá trị với key đó*
+
+*World state có thể sử dụng bằng LevelDB, CouchDB,... - đặc tính dễ thay thế của hyperledger fabric*
+
+###2.5.2. Blockchain
+a. Cấu trúc blockchain
+![](https://hyperledger-fabric.readthedocs.io/en/release-1.2/_images/ledger.diagram.2.png)
+b. Cấu trúc một block
+![](https://hyperledger-fabric.readthedocs.io/en/release-1.2/_images/ledger.diagram.4.png)
+c. Cấu trúc một transaction
+![](https://hyperledger-fabric.readthedocs.io/en/release-1.2/_images/ledger.diagram.5.png)
+
+- Header: Chứa các metadata liên quan tới transaction: chaincodeid,..
+- Signature: Dùng để kiểm tra sự toàn vẹn dữ liệu. Được sign bằng private key của application
+- Proposal: Giá trị encode của các input đầu vào khi thực hiện gọi chaincode
+- Reponse: Giá trị output đầu ra khi gọi chaincode (gồm các set read-write đối với world state)
+- Endorsements: Là danh sách các transaction responses được signed bởi các org nhằm thoả mãn chính sách tán thành
