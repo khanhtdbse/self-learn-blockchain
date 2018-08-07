@@ -12,11 +12,20 @@ Trong mạng ngang hàng, người có chủ đích tấn công mạo nhận s�
 
 #4. Coin age in ethereum
 
+#5.	Inter planetary file system (IPFS)
+- Là một file system phân tán. Lưu file thành các mảnh nhỏ liên kết với nhau bằng mã hash của các mảnh đó.
+- Kết hợp với blockchain để lưu file bảo mật. Lưu mã hash của file vào trong transaction của blockchain:
+![](https://cdn-images-1.medium.com/max/1600/1*yzYjtRViCDeWyhGnVzsUYw.png)
+	- John wants to upload a PDF file to IPFS but only give Mary access
+	- He puts his PDF file in his working directory and encrypts it with Mary’s public key
+	- He tells IPFS he wants to add this encrypted file, which generates a hash of the encrypted file
+	- His encrypted file is available on the IPFS network
+	- Mary can retrieve it and decrypt the file since she owns the associated private key of the public key that was used to encrypt the file. A malicious party cannot decrypt the file because they lack Mary’s private key
+
 
 - Practical byzantine fault tolerance
 - Distributed hash tables (DHTs)
-- Inter planetary file system (IPFS)
-- Directed acyclic graph
+- - Directed acyclic graph
 - Filecon
 - Bitswap
 - BigchainDB
